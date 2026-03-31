@@ -2,11 +2,24 @@
 
 This skill provides AI agents with all the information needed to develop websites using Kompanse CMS.
 
-## Getting Started
+## Installing This Skill
 
-When an agent loads this skill, it will be used automatically. This skill is activated when the user wants content-managed web projects such as websites, landing pages, blogs, or product catalogs.
+### For Open Code
 
-## Adding to AI Tools
+```bash
+npx skills add Kompanse/Kompanse.CMS.Skills
+```
+
+The skill is automatically used when:
+- You ask to develop a website
+- You need to manage CMS content
+- You want to create landing pages, blogs, or product catalogs
+
+### MCP Server Setup
+
+This skill requires the Kompanse CMS MCP server to be configured. The MCP server connects to your CMS instance.
+
+## Adding MCP Server to AI Tools
 
 ### Claude Code
 
