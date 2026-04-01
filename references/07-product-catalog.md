@@ -76,8 +76,8 @@ tenant_products_update
 # Category tree
 GET /api/public/product-catalog/categories
 
-# Product list (filtered)
-GET /api/public/product-catalog/products?categoryId=xxx&search=product&lang=en
+# Product list (filtered, categoryId repeatable)
+GET /api/public/product-catalog/products?categoryId=cat-a&categoryId=cat-b&search=product&lang=en
 
 # Product detail
 GET /api/public/product-catalog/products/{slug}
@@ -130,6 +130,9 @@ GET /api/public/product-catalog/products/filters
 # Select type filter
 GET /api/public/product-catalog/products?attrs[color]=Black
 
+# Multi-category filter (OR)
+GET /api/public/product-catalog/products?categoryId=cat-a&categoryId=cat-b
+
 # Multi-select on the same attribute (OR)
 GET /api/public/product-catalog/products?attrs[brand]=Veda&attrs[brand]=Apicenna&attrs[brand]=GigiVet
 
@@ -144,6 +147,7 @@ GET /api/public/product-catalog/products?categoryId=xxx&attrs[color]=Blue&attrs[
 ```
 
 Filtering semantics:
+- Repeated `categoryId` values are combined with `OR`.
 - Repeated values of the same `attrs[code]` key are combined with `OR`.
 - Different attribute keys are combined with `AND`.
 
