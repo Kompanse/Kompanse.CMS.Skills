@@ -57,7 +57,7 @@
 | Endpoint | Description | Query Parameters |
 |----------|-------------|-------------------|
 | `GET /api/public/product-catalog/categories` | Product categories (hierarchical) | - |
-| `GET /api/public/product-catalog/products` | Lists products | `page`, `pageSize`, `categoryId`, `search`, `lang`, `attrs[code]`, `attrs[code_min]`, `attrs[code_max]` |
+| `GET /api/public/product-catalog/products` | Lists products | `page`, `pageSize`, `categoryId`, `search`, `lang`, `attrs[code]` (repeatable), `attrs[code_min]`, `attrs[code_max]` |
 | `GET /api/public/product-catalog/products/{slug}` | Gets product detail by slug | `lang` |
 | `GET /api/public/product-catalog/products/filters` | Gets filter definitions | - |
 
@@ -119,7 +119,7 @@ const sections = await fetch('/api/public/content-sections/by-keys', {
 ```typescript
 // Filtered product list
 const products = await fetch(
-  '/api/public/product-catalog/products?categoryId=xxx&attrs[color]=Blue&lang=en',
+  '/api/public/product-catalog/products?categoryId=xxx&attrs[color]=Blue&attrs[color]=Black&attrs[size]=M&attrs[size]=L&lang=en',
   {
     headers: { 'X-Api-Key': apiKey }
   }
@@ -130,6 +130,14 @@ const filters = await fetch('/api/public/product-catalog/products/filters', {
   headers: { 'X-Api-Key': apiKey }
 }).then(res => res.json());
 ```
+
+Filtering semantics:
+- Repeated selections within the same attribute are evaluated with `OR`.
+- Different attribute groups are combined with `AND`.
+
+Example logic:
+`attrs[color]=Blue&attrs[color]=Black&attrs[size]=M&attrs[size]=L`
+means `(color IN [Blue, Black]) AND (size IN [M, L])`.
 
 ### Example: Blog Listing
 

@@ -130,6 +130,9 @@ GET /api/public/product-catalog/products/filters
 # Select type filter
 GET /api/public/product-catalog/products?attrs[color]=Black
 
+# Multi-select on the same attribute (OR)
+GET /api/public/product-catalog/products?attrs[brand]=Veda&attrs[brand]=Apicenna&attrs[brand]=GigiVet
+
 # Decimal range filter
 GET /api/public/product-catalog/products?attrs[weight_min]=0.1&attrs[weight_max]=0.5
 
@@ -139,3 +142,11 @@ GET /api/public/product-catalog/products?attrs[warranty]=true
 # Multiple filters
 GET /api/public/product-catalog/products?categoryId=xxx&attrs[color]=Blue&attrs[price_max]=5000
 ```
+
+Filtering semantics:
+- Repeated values of the same `attrs[code]` key are combined with `OR`.
+- Different attribute keys are combined with `AND`.
+
+Example:
+`attrs[brand]=Veda&attrs[brand]=Apicenna&attrs[form]=Tablet&attrs[form]=Powder`
+means `(brand IN [Veda, Apicenna]) AND (form IN [Tablet, Powder])`.
