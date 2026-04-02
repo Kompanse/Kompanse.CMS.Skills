@@ -58,6 +58,7 @@ public_site_settings_get
 public_pages_get_by_code
 public_content_sections_get_by_key
 public_navigator_menus_get_by_code
+public_locations_geo_countries_list
 ```
 
 ### 5. Frontend Development
@@ -78,6 +79,7 @@ public_navigator_menus_get_by_code
 | **Product Catalog** | Product lists | Products, categories, filters |
 | **Navigator** | Menus | Header, footer menus |
 | **Forms** | Data collection | Contact form, quote form |
+| **Locations** | Store/branch locations | Stores, branches, service points |
 | **Media Manager** | Files | Images, PDFs |
 | **Site Settings** | General settings | Site name, SEO, logo |
 | **Translations** | Translations | UI strings, labels |
@@ -108,3 +110,4 @@ For more information, read the documents in the `references/` folder:
 - `references/11-carousel.md` - Carousel Manager module
 - `references/12-media.md` - Media Manager module
 - `references/13-site-settings.md` - Site Settings module
+- `references/14-locations.md` - Locations module

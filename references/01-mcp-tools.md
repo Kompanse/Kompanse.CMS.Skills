@@ -113,6 +113,15 @@
 | `tenant_forms_get_submission` | Gets submission |
 | `tenant_forms_update_submission_status` | Updates submission status |
 
+## Locations
+
+| Tool | Description |
+|------|-------------|
+| `tenant_locations_create` | Creates location |
+| `tenant_locations_list` | Lists locations |
+| `tenant_locations_get` | Gets location |
+| `tenant_locations_update` | Updates location |
+
 ## Media Manager
 
 | Tool | Description |
@@ -144,3 +153,14 @@
 | `tenant_translations_stats` | Gets translation statistics |
 | `tenant_translations_set_translation` | Sets single translation (upsert) |
 | `tenant_translations_set_translation_multiple` | Sets translation in multiple languages |
+
+
+## Public (Selected)
+
+| Tool | Description |
+|------|-------------|
+| `public_locations_list` | Lists active public locations |
+| `public_locations_get` | Gets active public location detail |
+| `public_locations_geo_countries_list` | Lists active countries |
+| `public_locations_geo_cities_list` | Lists active cities |
+| `public_locations_geo_districts_list` | Lists active districts |

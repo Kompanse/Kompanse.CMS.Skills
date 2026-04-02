@@ -113,6 +113,7 @@ tenant_forms_create            # Define forms (if needed)
 public_site_settings_get
 public_pages_get_by_code
 public_content_sections_get_by_key
+public_locations_geo_countries_list
 ```
 
 ## Modules
@@ -126,6 +127,7 @@ public_content_sections_get_by_key
 | Product Catalog | Products, categories, filters | `07-product-catalog.md` |
 | Navigator | Menus | `08-navigator.md` |
 | Forms | Data collection | `09-forms.md` |
+| Locations | Store/branch locations | `14-locations.md` |
 | Media Manager | File management | `12-media.md` |
 | Site Settings | General settings | `13-site-settings.md` |
 | Translations | Translations | `10-translations.md` |
@@ -152,6 +154,7 @@ For detailed information, see the `references/` folder:
 - `11-carousel.md` - Carousel Manager module details
 - `12-media.md` - Media Manager module details
 - `13-site-settings.md` - Site Settings module details
+- `14-locations.md` - Locations module details
 
 ## Rules
 

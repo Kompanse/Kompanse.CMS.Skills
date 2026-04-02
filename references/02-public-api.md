@@ -52,6 +52,17 @@
 | `GET /api/public/blog/posts` | Lists blog posts | `page`, `pageSize`, `categoryId`, `tagId`, `search`, `lang` |
 | `GET /api/public/blog/posts/{slug}` | Gets blog post by slug | `lang` |
 
+
+### Locations
+
+| Endpoint | Description | Query Parameters |
+|----------|-------------|-------------------|
+| `GET /api/public/locations` | Lists active locations | `page`, `pageSize`, `search`, `groupName`, `countryId`, `cityId`, `districtId`, `lang` |
+| `GET /api/public/locations/{id}` | Gets active location detail | `lang` |
+| `GET /api/public/locations/geo/countries` | Lists active countries | - |
+| `GET /api/public/locations/geo/cities` | Lists active cities | `countryId` |
+| `GET /api/public/locations/geo/districts` | Lists active districts | `cityId` |
+
 ### Product Catalog
 
 | Endpoint | Description | Query Parameters |
@@ -174,6 +185,11 @@ const blogs = await fetch(
 | `public_products_get_by_slug` | Gets product by slug |
 | `public_products_get_filters` | Gets filters |
 | `public_forms_submit` | Submits form |
+| `public_locations_list` | Lists active public locations |
+| `public_locations_get` | Gets active public location detail |
+| `public_locations_geo_countries_list` | Lists active countries |
+| `public_locations_geo_cities_list` | Lists active cities |
+| `public_locations_geo_districts_list` | Lists active districts |
 | `public_media_download` | Downloads media file |
 | `public_translations_list` | Gets translations for specific language |
 | `public_translations_all` | Gets translations for all languages |
