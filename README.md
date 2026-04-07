@@ -14,6 +14,7 @@ The skill is automatically used when:
 - You ask to develop a website
 - You need to manage CMS content
 - You want to create landing pages, blogs, or product catalogs
+- You want to manage popups that are shown on homepage or specific URLs
 
 ### MCP Server Setup
 
@@ -123,6 +124,7 @@ public_locations_geo_countries_list
 | Pages | Pages with independent URLs | `05-pages.md` |
 | Content Sections | Page blocks (hero, cards, FAQ...) | `03-content-sections.md` |
 | Carousel Manager | Rotating slides | `11-carousel.md` |
+| Popups | URL/page-targeted popup campaigns | Popups module docs |
 | Blog | Editorial content | `06-blog.md` |
 | Product Catalog | Products, categories, filters | `07-product-catalog.md` |
 | Navigator | Menus | `08-navigator.md` |
@@ -152,6 +154,7 @@ For detailed information, see the `references/` folder:
 - `09-forms.md` - Forms module details
 - `10-translations.md` - Translations module details
 - `11-carousel.md` - Carousel Manager module details
+- Popups module docs - Popup module details
 - `12-media.md` - Media Manager module details
 - `13-site-settings.md` - Site Settings module details
 - `14-locations.md` - Locations module details
@@ -162,6 +165,7 @@ For detailed information, see the `references/` folder:
 
 - ✅ Use MCP for content creation/update
 - ✅ Use Public API for displaying published content
+- ✅ Use public popup resolve endpoints for frontend popup display logic
 - ✅ Always upload media to Media Manager first
 - ✅ Send X-Api-Key header in Public API requests
 - ✅ Use `list_route_mappings` to check endpoint mappings when needed
@@ -172,6 +176,7 @@ For detailed information, see the `references/` folder:
 - ❌ Don't guess routes - use `list_route_mappings`
 - ❌ No MCP tools for DELETE operations (soft delete is used)
 - ❌ Don't use tenant endpoints in frontend
+- ❌ Don't read popup display state from tenant endpoints in frontend
 - ❌ Don't make requests without X-Api-Key (except public media)
 
 ## Troubleshooting

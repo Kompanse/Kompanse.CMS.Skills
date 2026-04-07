@@ -28,6 +28,17 @@
 | `tenant_pages_get_by_code` | Gets page by code |
 | `tenant_pages_update` | Updates page |
 
+## Popups
+
+| Tool | Description |
+|------|-------------|
+| `tenant_popups_create` | Creates popup |
+| `tenant_popups_list` | Lists popups |
+| `tenant_popups_get` | Gets popup by ID |
+| `tenant_popups_get_by_code` | Gets popup by code |
+| `tenant_popups_update` | Updates popup |
+| `tenant_popups_delete` | Deletes popup |
+
 ## Content Sections
 
 | Tool | Description |
@@ -159,8 +170,14 @@
 
 | Tool | Description |
 |------|-------------|
+| `public_popups_resolve` | Resolves active popups for a URL, optional language and page code |
 | `public_locations_list` | Lists active public locations |
 | `public_locations_get` | Gets active public location detail |
 | `public_locations_geo_countries_list` | Lists active countries |
 | `public_locations_geo_cities_list` | Lists active cities |
 | `public_locations_geo_districts_list` | Lists active districts |
+
+## Guardrails
+
+- Frontend popup rendering should use `public_popups_resolve`, not tenant popup endpoints.
+- Tenant popup tools are for content management only; public visibility must be derived from the public resolve surface.
